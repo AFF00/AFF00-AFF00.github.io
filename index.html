@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Page</title>
+    <title>Iniciar Sesión</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #141414;
+            background-color: #000;
             color: #fff;
         }
 
         header {
-            background-color: #141414;
+            background-color: #8B0A1A;
             padding: 20px;
             text-align: center;
         }
@@ -47,13 +48,41 @@
             margin-bottom: 10px;
         }
 
-        p {
+        label {
             font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            height: 40px;
             margin-bottom: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #8B0A1A;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF0000;
         }
 
         footer {
-            background-color: #141414;
+            background-color: #8B0A1A;
             padding: 10px;
             text-align: center;
             clear: both;
@@ -62,32 +91,37 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Welcome to My Page</h1>
-        <p>This is a simple webpage with a Netflix theme.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Page</p>
-    </footer>
     <script>
-        // Add event listener to nav links
+        // Agrega evento de clic a los enlaces de navegación
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
-                // Add active class to current link
+                // Agrega clase activa al enlace actual
                 document.querySelector('nav a.active').classList.remove('active');
                 link.classList.add('active');
             });
         });
     </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Iniciar Sesión</a></li>
+                <li><a href="#">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Iniciar Sesión</h1>
+        <form>
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Iniciar Sesión</p>
+    </footer>
 </body>
 
 </html>
